@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sample</title>
+    <style media="screen">
+      .clock{
+        width: 300px;
+        height: 300px;
+        background-image: url('images/image1.jpg');
+        background-position: center;
+        background-size: cover;
+        border: 1px solid #000;
+        border-radius: 50%;
+
+      }
+    </style>
+  </head>
+  <body>
+<div class="clock">
+
+</div>
+
+
+
+
+    <script type="text/javascript">
+      setInterval(changeImage, 1000);
+      let bgClock = document.getElementsByClassName('clock');
+
+
+      let images = new Array(
+        'images/image1.jpg',
+        'images/image2.jpg',
+        'images/image3.jpg',
+        'images/image4.jpg',
+        'images/image5.jpg'
+      )
+
+
+
+      function changeImage(){
+        let i = 0;
+        bgClock.style.setProperty('backgroundImage', 'url('+ images[i+1]+')');
+        i++
+      }
+changeImage()
+    </script>
+  </body>
+</html>

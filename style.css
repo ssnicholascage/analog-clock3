@@ -1,0 +1,136 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, blue, red);
+  overflow: hidden;
+}
+
+#clock {
+  width: 500px;
+  height: 500px;
+  background-image: url("images/image3.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  border: 3px solid #fff;
+  color: #fff;
+  box-shadow: 25px 25px 25px #000;
+  font-size: 1.5rem;
+}
+@media only screen and (max-width:480px){
+  #clock {
+    width: 300px;
+    height: 300px;
+    font-size: 1rem;
+  }
+
+  body {
+    height: 80vh;
+  }
+}
+#clock::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #000;
+  border: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+}
+
+#clock .number {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#clock .number_1 {
+  transform: rotate(30deg);
+}
+
+#clock .number_2 {
+  transform: rotate(60deg);
+}
+
+#clock .number_3 {
+  transform: rotate(90deg);
+}
+
+#clock .number_4 {
+  transform: rotate(120deg);
+}
+
+#clock .number_5 {
+  transform: rotate(150deg);
+}
+
+#clock .number_6 {
+  transform: rotate(180deg);
+}
+
+#clock .number_7 {
+  transform: rotate(210deg);
+}
+
+#clock .number_8 {
+  transform: rotate(240deg);
+}
+
+#clock .number_9 {
+  transform: rotate(270deg);
+}
+
+#clock .number_10 {
+  transform: rotate(300deg);
+}
+
+#clock .number_11 {
+  transform: rotate(330deg);
+}
+
+#clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border: 1px solid #fff;
+  transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+  transform-origin: bottom;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  z-index: 12;
+}
+
+#clock .hour_hand {
+  width: 10px;
+  height: 35%;
+  background-color: blue;
+}
+
+#clock .minute_hand {
+  width: 7px;
+  height: 40%;
+  background-color: #000;
+}
+
+#clock .second_hand {
+  width: 3px;
+  height: 45%;
+  background-color: red;
+}
